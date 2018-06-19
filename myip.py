@@ -1,13 +1,13 @@
 #!/usr/local/bin/python
 import socket
 import sys
-import urllib
+import urllib.request
 
 
 def get_wan():
     ip_server = "https://ipv4.icanhazip.com/"
-    connection = urllib.urlopen(ip_server)
-    wan = connection.read().replace('\n', '')
+    connection = urllib.request.urlopen(ip_server).read()
+    wan = str(connection.decode()).replace('\n', '')
     return wan
 
 

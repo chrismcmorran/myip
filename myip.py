@@ -1,13 +1,13 @@
-#!/usr/bin/python
+#!/usr/local/bin/python
+import socket
 import sys
 import urllib
-import socket
 
 
 def get_wan():
-    ip_server = "https://nodejs-ipserver.herokuapp.com/"
+    ip_server = "https://ipv4.icanhazip.com/"
     connection = urllib.urlopen(ip_server)
-    wan = connection.read()
+    wan = connection.read().replace('\n', '')
     return wan
 
 
